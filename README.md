@@ -15,7 +15,6 @@
             margin: 0;
             background-image: url('https://arabradio.us/wp-content/uploads/2019/12/%D8%B5%D9%88%D8%B1-%D8%A7%D9%84%D9%81%D8%B6%D8%A7%D8%A1-16.jpg');
             background-size: cover;
-
             background-position: center;
             background-attachment: fixed; 
             color: white;
@@ -92,11 +91,9 @@
         <button onclick="showStars()">إظهار المعلومات</button>
         <div id="result"></div>
     </div>
-    
     <footer>
         <p>حقوق الطبع والنشر محفوظة <a href="https://www.instagram.com/talal_megumi" target="_blank">talal_megumi</a></p>
     </footer>
-
     <script>
         const characters = [
             { name: "فايوليت", stars: 100000000, alerts: 0, rank: "الملكة", mediaUrl: 'https://media1.tenor.com/m/TZ89Av8QBVkAAAAd/violet-evergarden-violet.gif' },
@@ -109,28 +106,23 @@
             { name: "", stars: 1500, alerts: 0, rank: "", mediaUrl: '' },
             { name: "", stars: 1500, alerts: 0, rank: "", mediaUrl: '' },
         ];
-
         function showStars() {
             const name = document.getElementById("characterName").value.trim();
             const resultDiv = document.getElementById("result");
-
             if (!name) {
                 resultDiv.innerHTML = "الرجاء إدخال اسم شخصية.";
                 return;
             }
-
             const character = characters.find(char => char.name === name);
-
             if (!character) {
                 resultDiv.innerHTML = "الشخصية غير موجودة.";
                 resultDiv.innerHTML += <img class="media" src="https://th.bing.com/th/id/R.68646d97c953d504c1057cf5417434c2?rik=nHi%2f7nEbJ7i1RQ&pid=ImgRaw&r=0" />;
                 return;
             }
-
             resultDiv.innerHTML = `
-                <p>الرتبة: ${character.rank}</p>
-                <p>الستارز: ${character.stars}</p>
-                <p>الإنذارات: ${character.alerts}</p>
+                <p>الرتبة: ${character.rank}</p>;
+                <p>الستارز: ${character.stars}</p>;
+                <p>الإنذارات: ${character.alerts}</p>;
                 <img class="media" src="${character.mediaUrl}" alt="${character.name}" />`;
         }
     </script>
